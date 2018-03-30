@@ -1,8 +1,8 @@
-defmodule TaskTrackerSpaWeb.UserController do
-  use TaskTrackerSpaWeb, :controller
+defmodule TaskTrackerSPAWeb.UserController do
+  use TaskTrackerSPAWeb, :controller
 
-  alias TaskTrackerSpa.Accounts
-  alias TaskTrackerSpa.Accounts.User
+  alias TaskTrackerSPA.Accounts
+  alias TaskTrackerSPA.Accounts.User
 
   def index(conn, _params) do
     users = Accounts.list_users()

@@ -1,4 +1,4 @@
-defmodule TaskTrackerSpaWeb.ChannelCase do
+defmodule TaskTrackerSPAWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule TaskTrackerSpaWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint TaskTrackerSpaWeb.Endpoint
+      @endpoint TaskTrackerSPAWeb.Endpoint
     end
   end
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TaskTrackerSpa.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TaskTrackerSPA.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(TaskTrackerSpa.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(TaskTrackerSPA.Repo, {:shared, self()})
     end
     :ok
   end

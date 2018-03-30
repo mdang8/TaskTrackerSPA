@@ -1,10 +1,10 @@
-defmodule TaskTrackerSpa.AccountsTest do
-  use TaskTrackerSpa.DataCase
+defmodule TaskTrackerSPA.AccountsTest do
+  use TaskTrackerSPA.DataCase
 
-  alias TaskTrackerSpa.Accounts
+  alias TaskTrackerSPA.Accounts
 
   describe "users" do
-    alias TaskTrackerSpa.Accounts.User
+    alias TaskTrackerSPA.Accounts.User
 
     @valid_attrs %{email: "some email", name: "some name"}
     @update_attrs %{email: "some updated email", name: "some updated name"}

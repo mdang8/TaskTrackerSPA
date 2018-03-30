@@ -1,7 +1,7 @@
-defmodule TaskTrackerSpaWeb.Endpoint do
+defmodule TaskTrackerSPAWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :task_tracker_spa
 
-  socket "/socket", TaskTrackerSpaWeb.UserSocket
+  socket "/socket", TaskTrackerSPAWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -38,7 +38,7 @@ defmodule TaskTrackerSpaWeb.Endpoint do
     key: "_task_tracker_spa_key",
     signing_salt: "qUFnLDiF"
 
-  plug TaskTrackerSpaWeb.Router
+  plug TaskTrackerSPAWeb.Router
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.

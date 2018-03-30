@@ -1,3 +1,3 @@
-defmodule TaskTrackerSpaWeb.LayoutViewTest do
-  use TaskTrackerSpaWeb.ConnCase, async: true
+defmodule TaskTrackerSPAWeb.LayoutViewTest do
+  use TaskTrackerSPAWeb.ConnCase, async: true
 end

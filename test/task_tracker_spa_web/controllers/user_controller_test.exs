@@ -1,7 +1,7 @@
-defmodule TaskTrackerSpaWeb.UserControllerTest do
-  use TaskTrackerSpaWeb.ConnCase
+defmodule TaskTrackerSPAWeb.UserControllerTest do
+  use TaskTrackerSPAWeb.ConnCase
 
-  alias TaskTrackerSpa.Accounts
+  alias TaskTrackerSPA.Accounts
 
   @create_attrs %{email: "some email", name: "some name"}
   @update_attrs %{email: "some updated email", name: "some updated name"}

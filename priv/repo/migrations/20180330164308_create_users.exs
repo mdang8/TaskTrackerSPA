@@ -1,4 +1,4 @@
-defmodule TaskTrackerSpa.Repo.Migrations.CreateUsers do
+defmodule TaskTrackerSPA.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do
