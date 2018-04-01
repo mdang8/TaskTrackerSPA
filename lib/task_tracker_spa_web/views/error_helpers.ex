@@ -1,4 +1,4 @@
-defmodule TaskTrackerSPAWeb.ErrorHelpers do
+defmodule TaskTrackerSpaWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule TaskTrackerSPAWeb.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(TaskTrackerSPAWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(TaskTrackerSpaWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(TaskTrackerSPAWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(TaskTrackerSpaWeb.Gettext, "errors", msg, opts)
     end
   end
 end

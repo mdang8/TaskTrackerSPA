@@ -1,4 +1,4 @@
-# TaskTrackerSPA
+# TaskTrackerSpa
 
 To start your Phoenix server:
 

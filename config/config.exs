@@ -7,14 +7,14 @@ use Mix.Config
 
 # General application configuration
 config :task_tracker_spa,
-  ecto_repos: [TaskTrackerSPA.Repo]
+  ecto_repos: [TaskTrackerSpa.Repo]
 
 # Configures the endpoint
-config :task_tracker_spa, TaskTrackerSPAWeb.Endpoint,
+config :task_tracker_spa, TaskTrackerSpaWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "8HGXbKFy/5uCPCH75K4L+nNUOneuMH4g/h+W1IiLfcs/LFoO7YQpa+CNpUkyA3pJ",
-  render_errors: [view: TaskTrackerSPAWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: TaskTrackerSPA.PubSub,
+  secret_key_base: "yoAzX6gTjjk8KrkeNfbFS1jM0yFALqdegrlpL8O8wyJauwocKlA+qmtw0TJ2PRYa",
+  render_errors: [view: TaskTrackerSpaWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: TaskTrackerSpa.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

@@ -1,5 +1,5 @@
-defmodule TaskTrackerSPAWeb.PageControllerTest do
-  use TaskTrackerSPAWeb.ConnCase
+defmodule TaskTrackerSpaWeb.PageControllerTest do
+  use TaskTrackerSpaWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

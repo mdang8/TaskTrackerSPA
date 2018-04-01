@@ -1,5 +1,5 @@
-defmodule TaskTrackerSPAWeb.Router do
-  use TaskTrackerSPAWeb, :router
+defmodule TaskTrackerSpaWeb.Router do
+  use TaskTrackerSpaWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,16 @@ defmodule TaskTrackerSPAWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", TaskTrackerSPAWeb do
+  scope "/", TaskTrackerSpaWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/users", UserController
+    resources "/tasks", TaskController
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", TaskTrackerSPAWeb do
+  # scope "/api", TaskTrackerSpaWeb do
   #   pipe_through :api
   # end
 end

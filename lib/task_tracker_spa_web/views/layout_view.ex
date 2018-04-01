@@ -1,3 +1,3 @@
-defmodule TaskTrackerSPAWeb.LayoutView do
-  use TaskTrackerSPAWeb, :view
+defmodule TaskTrackerSpaWeb.LayoutView do
+  use TaskTrackerSpaWeb, :view
 end

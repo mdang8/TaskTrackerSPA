@@ -1,8 +1,8 @@
-defmodule TaskTrackerSPAWeb.UserSocket do
+defmodule TaskTrackerSpaWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", TaskTrackerSPAWeb.RoomChannel
+  # channel "room:*", TaskTrackerSpaWeb.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -30,7 +30,7 @@ defmodule TaskTrackerSPAWeb.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     TaskTrackerSPAWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
+  #     TaskTrackerSpaWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

@@ -1,4 +1,4 @@
-defmodule TaskTrackerSPA.Mixfile do
+defmodule TaskTrackerSpa.Mixfile do
   use Mix.Project
 
   def project do
@@ -19,7 +19,7 @@ defmodule TaskTrackerSPA.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {TaskTrackerSPA.Application, []},
+      mod: {TaskTrackerSpa.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

@@ -1,5 +1,5 @@
-defmodule TaskTrackerSPAWeb.ErrorView do
-  use TaskTrackerSPAWeb, :view
+defmodule TaskTrackerSpaWeb.ErrorView do
+  use TaskTrackerSpaWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"

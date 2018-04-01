@@ -1,4 +1,4 @@
-defmodule TaskTrackerSPA.Repo do
+defmodule TaskTrackerSpa.Repo do
   use Ecto.Repo, otp_app: :task_tracker_spa
 
   @doc """

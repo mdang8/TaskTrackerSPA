@@ -1,4 +1,4 @@
-defmodule TaskTrackerSPA.Application do
+defmodule TaskTrackerSpa.Application do
   use Application
 
   # See https://hexdocs.pm/elixir/Application.html
@@ -9,23 +9,23 @@ defmodule TaskTrackerSPA.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(TaskTrackerSPA.Repo, []),
+      supervisor(TaskTrackerSpa.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(TaskTrackerSPAWeb.Endpoint, []),
-      # Start your own worker by calling: TaskTrackerSPA.Worker.start_link(arg1, arg2, arg3)
-      # worker(TaskTrackerSPA.Worker, [arg1, arg2, arg3]),
+      supervisor(TaskTrackerSpaWeb.Endpoint, []),
+      # Start your own worker by calling: TaskTrackerSpa.Worker.start_link(arg1, arg2, arg3)
+      # worker(TaskTrackerSpa.Worker, [arg1, arg2, arg3]),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: TaskTrackerSPA.Supervisor]
+    opts = [strategy: :one_for_one, name: TaskTrackerSpa.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    TaskTrackerSPAWeb.Endpoint.config_change(changed, removed)
+    TaskTrackerSpaWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

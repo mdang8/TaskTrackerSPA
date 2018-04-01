@@ -1,12 +1,12 @@
-defmodule TaskTrackerSPAWeb do
+defmodule TaskTrackerSpaWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use TaskTrackerSPAWeb, :controller
-      use TaskTrackerSPAWeb, :view
+      use TaskTrackerSpaWeb, :controller
+      use TaskTrackerSpaWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,17 +19,17 @@ defmodule TaskTrackerSPAWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: TaskTrackerSPAWeb
+      use Phoenix.Controller, namespace: TaskTrackerSpaWeb
       import Plug.Conn
-      import TaskTrackerSPAWeb.Router.Helpers
-      import TaskTrackerSPAWeb.Gettext
+      import TaskTrackerSpaWeb.Router.Helpers
+      import TaskTrackerSpaWeb.Gettext
     end
   end
 
   def view do
     quote do
       use Phoenix.View, root: "lib/task_tracker_spa_web/templates",
-                        namespace: TaskTrackerSPAWeb
+                        namespace: TaskTrackerSpaWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
@@ -37,9 +37,9 @@ defmodule TaskTrackerSPAWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import TaskTrackerSPAWeb.Router.Helpers
-      import TaskTrackerSPAWeb.ErrorHelpers
-      import TaskTrackerSPAWeb.Gettext
+      import TaskTrackerSpaWeb.Router.Helpers
+      import TaskTrackerSpaWeb.ErrorHelpers
+      import TaskTrackerSpaWeb.Gettext
     end
   end
 
@@ -54,7 +54,7 @@ defmodule TaskTrackerSPAWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import TaskTrackerSPAWeb.Gettext
+      import TaskTrackerSpaWeb.Gettext
     end
   end
 

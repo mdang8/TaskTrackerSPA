@@ -1,10 +1,9 @@
-defmodule TaskTrackerSPA.Accounts.User do
+defmodule TaskTrackerSpa.Users.User do
   use Ecto.Schema
   import Ecto.Changeset
 
 
   schema "users" do
-    field :email, :string
     field :name, :string
 
     timestamps()
@@ -13,7 +12,7 @@ defmodule TaskTrackerSPA.Accounts.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :name])
-    |> validate_required([:email, :name])
+    |> cast(attrs, [:name])
+    |> validate_required([:name])
   end
 end

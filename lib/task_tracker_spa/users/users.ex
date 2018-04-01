@@ -1,12 +1,12 @@
-defmodule TaskTrackerSPA.Accounts do
+defmodule TaskTrackerSpa.Users do
   @moduledoc """
-  The Accounts context.
+  The Users context.
   """
 
   import Ecto.Query, warn: false
-  alias TaskTrackerSPA.Repo
+  alias TaskTrackerSpa.Repo
 
-  alias TaskTrackerSPA.Accounts.User
+  alias TaskTrackerSpa.Users.User
 
   @doc """
   Returns the list of users.
