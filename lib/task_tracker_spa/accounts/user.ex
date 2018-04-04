@@ -1,4 +1,4 @@
-defmodule TaskTrackerSpa.Users.User do
+defmodule TaskTrackerSpa.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 

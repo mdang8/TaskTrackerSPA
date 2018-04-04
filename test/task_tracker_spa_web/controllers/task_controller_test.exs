@@ -1,15 +1,15 @@
 defmodule TaskTrackerSpaWeb.TaskControllerTest do
   use TaskTrackerSpaWeb.ConnCase
 
-  alias TaskTrackerSpa.Tasks
-  alias TaskTrackerSpa.Tasks.Task
+  alias TaskTrackerSpa.Social
+  alias TaskTrackerSpa.Social.Task
 
   @create_attrs %{completed: true, description: "some description", title: "some title"}
   @update_attrs %{completed: false, description: "some updated description", title: "some updated title"}
   @invalid_attrs %{completed: nil, description: nil, title: nil}
 
   def fixture(:task) do
-    {:ok, task} = Tasks.create_task(@create_attrs)
+    {:ok, task} = Social.create_task(@create_attrs)
     task
   end
 

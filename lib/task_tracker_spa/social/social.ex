@@ -1,12 +1,12 @@
-defmodule TaskTrackerSpa.Tasks do
+defmodule TaskTrackerSpa.Social do
   @moduledoc """
-  The Tasks context.
+  The Social context.
   """
 
   import Ecto.Query, warn: false
   alias TaskTrackerSpa.Repo
 
-  alias TaskTrackerSpa.Tasks.Task
+  alias TaskTrackerSpa.Social.Task
 
   @doc """
   Returns the list of tasks.
@@ -19,6 +19,7 @@ defmodule TaskTrackerSpa.Tasks do
   """
   def list_tasks do
     Repo.all(Task)
+    |> Repo.preload(:user)
   end
 
   @doc """
@@ -35,7 +36,10 @@ defmodule TaskTrackerSpa.Tasks do
       ** (Ecto.NoResultsError)
 
   """
-  def get_task!(id), do: Repo.get!(Task, id)
+  def get_task!(id) do
+    Repo.get!(Task, id)
+    |> Repo.preload(:user)
+  end
 
   @doc """
   Creates a task.
@@ -50,9 +54,11 @@ defmodule TaskTrackerSpa.Tasks do
 
   """
   def create_task(attrs \\ %{}) do
-    %Task{}
+    {:ok, task} = %Task{}
     |> Task.changeset(attrs)
     |> Repo.insert()
+
+    {:ok, Repo.preload(task, :user)}
   end
 
   @doc """

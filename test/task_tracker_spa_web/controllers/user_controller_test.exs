@@ -1,15 +1,15 @@
 defmodule TaskTrackerSpaWeb.UserControllerTest do
   use TaskTrackerSpaWeb.ConnCase
 
-  alias TaskTrackerSpa.Users
-  alias TaskTrackerSpa.Users.User
+  alias TaskTrackerSpa.Accounts
+  alias TaskTrackerSpa.Accounts.User
 
   @create_attrs %{name: "some name"}
   @update_attrs %{name: "some updated name"}
   @invalid_attrs %{name: nil}
 
   def fixture(:user) do
-    {:ok, user} = Users.create_user(@create_attrs)
+    {:ok, user} = Accounts.create_user(@create_attrs)
     user
   end
 
