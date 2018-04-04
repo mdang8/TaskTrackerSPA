@@ -8,7 +8,6 @@ defmodule TaskTrackerSpa.Social.Task do
     field :description, :string
     field :duration, :integer, default: 0
     field :title, :string
-    #field :user_id, :id
     field :assigned_id, :id
     belongs_to :user, TaskTrackerSpa.Accounts.User
 

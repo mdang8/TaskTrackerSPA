@@ -30,7 +30,7 @@ defmodule Seeds do
       title: "#{a.name}'s Task",
       description: "This is a task for #{a.name}.",
       completed: false,
-      duration: 0
+      duration: 15
     })
 
     Repo.insert!(%Task{

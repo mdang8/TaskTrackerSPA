@@ -31,9 +31,10 @@ let TaskTracker = connect((state) => state)((props) => {
         <Route path="/users" exact={true} render={() =>
           <Users users={props.users} />
         } />
-        <Route path="/users/:user_id" render={({ match }) =>
-          <Board tasks={_filter(props.tasks, (task) =>
-            match.props.user_id == task.user_id)
+        <Route path="/users/:user_id" render={({match}) =>
+          <Board tasks={_.filter(props.tasks, (task) => {
+            return match.params.user_id == task.user.id;
+          })
           } />
         } />
       </div>

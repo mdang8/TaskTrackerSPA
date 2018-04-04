@@ -7,7 +7,7 @@ export default function Task(params) {
   return <Card>
     <CardBody>
       <div>
-        <p>Created by <b>{task.user.name}</b></p>
+        <p><i>Created by <b>{task.user.name}</b></i></p>
         <h3>{task.title}</h3>
         <p>{task.description}</p>
       </div>

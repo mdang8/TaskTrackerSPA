@@ -27,7 +27,9 @@ function TaskForm(params) {
     });
   }
 
-  let users = _.map(params.users, (user) => <option key={user.id} value={user.id}>{user.name}</option>);
+  let users = _.map(params.users, (user) => 
+    <option key={user.id} value={user.id}>{user.name}</option>
+  );
 
   return (
     <div style={{ padding: "4ex" }}>
@@ -47,14 +49,18 @@ function TaskForm(params) {
         <Input type="textarea" name="description" value={params.form.description} onChange={update} />
       </FormGroup>
       <Button onClick={submit} color="primary">Create</Button>
+      <Button onClick={clear}>Clear</Button>
     </div>
   );
 }
 
 function state2props(state) {
-  console.log('rerender', state);
+  console.log('rerender@TaskForm', state);
 
-  return { form: state.form };
+  return {
+    form: state.form,
+    users: state.users,
+  };
 }
 
 export default connect(state2props)(TaskForm);
