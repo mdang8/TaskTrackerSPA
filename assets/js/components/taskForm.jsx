@@ -12,13 +12,26 @@ function TaskForm(params) {
       type: 'UPDATE_FORM',
       data: data,
     };
-    console.log(action);
+
     params.dispatch(action);
   }
 
   function submit(ev) {
-    api.submitTask(params.form);
-    console.log(params.form);
+    if (params.token != null) {
+      if (Object.values(params.form).some(v => v == '')) {
+        alert('You must fill in every field!');
+      } else {
+        if (Number(params.form.duration) % 15 !== 0) {
+          alert('You must enter a duration number that is a multiple of 15!');
+        } else {
+          let newForm = Object.assign({}, params.form);
+          newForm.completed = (params.form.completed === 'yes');
+          api.submitTask(newForm);
+        }
+      }
+    } else {
+      alert('You are not logged in!');
+    }
   }
 
   function clear(ev) {
@@ -27,7 +40,7 @@ function TaskForm(params) {
     });
   }
 
-  let users = _.map(params.users, (user) => 
+  let users = _.map(params.users, (user) =>
     <option key={user.id} value={user.id}>{user.name}</option>
   );
 
@@ -41,6 +54,13 @@ function TaskForm(params) {
         </Input>
       </FormGroup>
       <FormGroup>
+        <Label for="assigned_id">Assignee</Label>
+        <Input type="select" name="assigned_id" value={params.form.assigned_id} onChange={update}>
+          <option key="0" defaultValue>Select a user to assign this task</option>
+          {users}
+        </Input>
+      </FormGroup>
+      <FormGroup>
         <Label for="title">Title</Label>
         <Input type="text" name="title" value={params.form.title} onChange={update} />
       </FormGroup>
@@ -48,15 +68,24 @@ function TaskForm(params) {
         <Label for="description">Description</Label>
         <Input type="textarea" name="description" value={params.form.description} onChange={update} />
       </FormGroup>
-      <Button onClick={submit} color="primary">Create</Button>
+      <FormGroup>
+        <Label for="duration">Duration</Label>
+        <Input type="number" step="15" name="duration" value={params.form.duration} onChange={update} />
+      </FormGroup>
+      <FormGroup>
+        <Label for="completed">Completed</Label>
+        <Input type="select" name="completed" value={params.form.completed} onChange={update}>
+          <option value="no" defaultValue>No</option>
+          <option value="yes">Yes</option>
+        </Input>
+      </FormGroup>
+      <Button style={{ marginRight: "1ex" }} onClick={submit} color="primary">Create</Button>
       <Button onClick={clear}>Clear</Button>
     </div>
   );
 }
 
 function state2props(state) {
-  console.log('rerender@TaskForm', state);
-
   return {
     form: state.form,
     users: state.users,
@@ -64,26 +93,3 @@ function state2props(state) {
 }
 
 export default connect(state2props)(TaskForm);
-
-// export default function TaskForm(params) {
-//   let users = _.map(params.users, (uu) => {
-//     <option key={uu.id} value={uu.id}>{uu.name}</option>
-//   });
-
-//   return (
-//     <div style={{ padding: "4ex" }}>
-//       <h2>New Task</h2>
-//       <FormGroup>
-//         <Label for="user_id">User</Label>
-//         <Input type="select" name="user_id">
-//           {users}
-//         </Input>
-//       </FormGroup>
-//       <FormGroup>
-//         <Label for="title">Title</Label>
-//         <Input type="text" name="title" />
-//       </FormGroup>
-//       <Button onClick={() => alert("TODO")}>Create</Button>
-//     </div>
-//   );
-// }

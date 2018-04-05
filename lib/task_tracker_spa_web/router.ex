@@ -20,12 +20,15 @@ defmodule TaskTrackerSpaWeb.Router do
     get "/users", PageController, :index
     get "/tasks", PageController, :index
     get "/users/:id", PageController, :index
+    get "/new/task", PageController, :index
+    get "/new/user", PageController, :index
   end
 
   scope "/api/v1", TaskTrackerSpaWeb do
     pipe_through :api
     resources "/users", UserController, except: [:new, :edit]
     resources "/tasks", TaskController, except: [:new, :edit]
+    post "/token", TokenController, :create
   end
 
   # Other scopes may use custom stacks.

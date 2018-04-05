@@ -1,14 +1,14 @@
 import React from 'react';
-import Task from './task';
+import BoardTask from './boardTask';
 
 export default function Board(params) {
-  let tasks = _.map(params.tasks, (task) =>
-    <Task key={task.id} task={task} />
+  const boardTasks = _.map(params.tasks, (task) =>
+    <BoardTask key={task.id} task={task} />
   );
 
   return (
     <div>
-      {tasks}
+      {boardTasks}
     </div>
   );
 }

@@ -11,7 +11,12 @@ defmodule TaskTrackerSpaWeb.TaskController do
     render(conn, "index.json", tasks: tasks)
   end
 
-  def create(conn, %{"task" => task_params}) do
+  def create(conn, %{"task" => task_params, "token" => token}) do
+    {:ok, user_id} = Phoenix.Token.verify(conn, "auth_token", token, max_age: 86400)
+    if task_params["user_id"] != user_id do
+      raise "Not the correct user!"
+    end
+
     with {:ok, %Task{} = task} <- Social.create_task(task_params) do
       conn
       |> put_status(:created)

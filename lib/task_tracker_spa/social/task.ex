@@ -8,8 +8,9 @@ defmodule TaskTrackerSpa.Social.Task do
     field :description, :string
     field :duration, :integer, default: 0
     field :title, :string
-    field :assigned_id, :id
+    #field :assigned_id, :id
     belongs_to :user, TaskTrackerSpa.Accounts.User
+    belongs_to :assigned, TaskTrackerSpa.Accounts.User
 
     timestamps()
   end
@@ -18,6 +19,6 @@ defmodule TaskTrackerSpa.Social.Task do
   def changeset(task, attrs) do
     task
     |> cast(attrs, [:title, :description, :duration, :completed, :user_id, :assigned_id])
-    |> validate_required([:title, :description, :duration, :completed, :user_id, :assigned_id])
+    |> validate_required([:title, :description, :duration, :user_id, :assigned_id])
   end
 end
